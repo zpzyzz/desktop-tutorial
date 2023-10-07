@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcode=self.webpackChunkcode||[]).push([[152],{5580:function(c,e,n){n.r(e),n.d(e,{default:function(){return s}});n(7861);var u=n(4072),r=n(7770);function s(){return(0,r.jsx)(u.zx,{color:"success",children:"\u60a8\u8bbf\u95ee\u7684\u9875\u9762\u4e0d\u5b58\u5728\uff01"})}}}]);
+//# sourceMappingURL=not_found.1cbdf46b.chunk.js.map
