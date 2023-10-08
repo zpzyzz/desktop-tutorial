@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+1. cra初始化项目 create-react-app my-project
+2. 自定义(覆盖) webpack配置  craco
+    1. 安装 npm i -D @craco/craco (或者yarn add @craco/craco -D)
+    2. 配置文件 
+        1创建配置文件craco.config.js  
+        2修改package.json中的脚本命令,将 start/build/test 三个命令修改为 craco
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+3. tailwindcss [https://www.tailwindcss.cn/docs/guides/create-react-app]
+    1. yarn add -D tailwindcss
+    2. npx tailwindcss init
+    存在冲突在.tailwindcss文件添加
+            corePlugins: {
+              preflight: false,
+            },
 
-## Available Scripts
+4. jsconfig.json 配置路径别名的映射
+5. UI库的配置 [https://ant.design/docs/react/use-with-create-react-app-cn]
+    1. yarn add antd
 
-In the project directory, you can run:
+6. 请求库的配置
 
-### `npm start`
+代码规范
+1. 安装插件editorconfig ---> 新建.editorconfig文件 
+2. 安装yarn add prettier -D --> 新建.prettierrc文件  
+3. 安装yarn add eslint -D --> (初始化不成功先yarn add @eslint/create-config -D)npx eslint --init [3,1,1] 
+    --> 安装插件ESLint
+4. 解决prettier和ESLint的冲突
+   1.安装 yarn add eslint-plugin-prettier eslint-config-prettier -D
+   2.在.eslintrc.js中的extends中添加 'plugin:prettier/recommended'
+   3.错误较多可以在package.json的调试中添加 "lint": "npx eslint --fix",运行yarn lint即可
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-------仅了解-------
+npx abc => 运行./node_,odules/.bin/abc.js
+#！/usr/bin/env  node 告诉操作系统 该文件由谁来执行
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+webpack => 去环境变量中 Path 去匹配路径寻找 webpack 这个可执行文件
+尝试：
+npm i webpack -g
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. D:\Program Files\Git\cmd\webpack
+2. C:\Program Files\nodejs\webpack
+3. C:\python27\webpack
