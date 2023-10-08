@@ -1,20 +1,17 @@
-import axios from "axios";
+import axios from 'axios';
 const http = axios.create({
-  baseURL: "https://netease-cloud-music-api-five-roan-88.vercel.app",
+  baseURL: 'https://netease-cloud-music-api-five-roan-88.vercel.app',
   timeout: 15000,
 });
 // 请求拦截器(请求发出了，请求没有发出去)
-http.interceptors.request.use(
-  (config) => {
-    // config.baseURL = "http://baidu.com";
-    // 提供了每次请求发出之前修改配置的机会
-    return config;
-  },
-);
+http.interceptors.request.use((config) => {
+  // config.baseURL = "http://baidu.com";
+  // 提供了每次请求发出之前修改配置的机会
+  return config;
+});
 // 响应拦截器(收到响应了、没收到响应)
 http.interceptors.response.use(
   (response) => {
-    console.log(response);
     return response.data;
   },
   (error) => {
@@ -34,8 +31,7 @@ http.interceptors.response.use(
       default:
         break;
     }
-
-  }
+  },
 );
 
 export default http;
